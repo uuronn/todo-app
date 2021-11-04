@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.1",
     "core-js": "^3.19.1",
-    "node-sass": "4.0.0",
+    "node-sass": "5.0.0",
     "nuxt": "^2.15.8",
     "ress": "^4.0.0",
     "sass-loader": "10.1.1"
