@@ -18,8 +18,8 @@ export default ({
     addTodo() {
       if(this.inputName) {
         console.log(this.inputName);
-        this.inputName = "";
       }
+        this.inputName = "";
     }
   }
 })
