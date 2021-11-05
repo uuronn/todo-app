@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [12]
+        node: [14]
 
     steps:
       - name: Checkout 🛎
@@ -43,4 +43,3 @@ jobs:
         run: yarn
       - name: Run linter 👀
         run: yarn lint
-        

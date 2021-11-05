@@ -1,7 +1,6 @@
 <template>
   <main class="container">
-    <h1>Hello, Nuxt template!!!</h1>
-    <p>by {{ companyName }}</p>
+    <h1>Hello, world!</h1>
   </main>
 </template>
 
@@ -9,11 +8,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  data() {
-    return {
-      companyName: "Hack'z Inc.",
-    };
-  },
+
 });
 </script>
 
