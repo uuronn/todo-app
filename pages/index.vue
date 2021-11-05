@@ -1,20 +1,20 @@
 <template>
   <main class="container">
     <h1>ToDoList</h1>
-    <VTodoInput/>
+    <VTodoCreate/>
     <VTodoList/>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import VTodoInput from '~/components/VTodoInput.vue';
+import VTodoCreate from '~/components/VTodoCreate.vue';
 import VTodoList from '~/components/VTodoList.vue';
 
 export default Vue.extend({
   components: {
     VTodoList,
-    VTodoInput,
+    VTodoCreate,
   }
 });
 </script>
