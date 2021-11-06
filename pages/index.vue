@@ -1,14 +1,21 @@
 <template>
   <main class="container">
-    <h1>Hello, world!</h1>
+    <h1>ToDoList</h1>
+    <VTodoCreate/>
+    <VTodoList/>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import VTodoCreate from '~/components/VTodoCreate.vue';
+import VTodoList from '~/components/VTodoList.vue';
 
 export default Vue.extend({
-
+  components: {
+    VTodoList,
+    VTodoCreate,
+  }
 });
 </script>
 
