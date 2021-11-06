@@ -58,6 +58,7 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/axios'
   ],
 
   googleAnalytics: {

@@ -15,6 +15,10 @@ export default Vue.extend({
   components: {
     VTodoList,
     VTodoCreate,
+  },
+  async asyncData({ app }) {
+    const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
+    console.log(response);
   }
 });
 </script>
