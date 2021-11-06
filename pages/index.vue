@@ -2,7 +2,7 @@
   <main class="container">
     <h1>ToDoList</h1>
     <VTodoCreate/>
-    <VTodoList/>
+    <VTodoList :todos="todos"/>
   </main>
 </template>
 
@@ -15,7 +15,11 @@ export default Vue.extend({
   components: {
     VTodoList,
     VTodoCreate,
-  }
+  },
+  async asyncData({ app }) {
+      const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
+      return {todos: response}
+  },
 });
 </script>
 

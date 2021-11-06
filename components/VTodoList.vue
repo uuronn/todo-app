@@ -11,31 +11,14 @@
   </section>
 </template>
 
-<script>
-// isDone title id
-export default {
-  data() {
-    return {
-      todos: [
-        {
-          title: "リスト１",
-          isDone: 0,
-          id: 1
-        },
-        {
-          title: "リスト２",
-          isDone: 1,
-          id: 2
-        },
-        {
-          title: "リスト３",
-          isDone: 0,
-          id: 3
-        }
-      ]
-    }
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend ({
+  props: {
+    'todos': Array
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
