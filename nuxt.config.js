@@ -1,6 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    mode: 'spa',
+    target: 'static',
     title: 'world todo',
     meta: [
       { charset: 'utf-8' },
@@ -14,28 +16,38 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: '' },
       { hid: 'og:description', property: 'og:description', content: '' },
       { hid: 'og:url', property: 'og:url', content: 'https://example.com/' },
-      { hid: 'og:image', property: 'og:image', content: 'https://example.com/ogp.jpg' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://example.com/ogp.jpg',
+      },
       // Twitter OGP
       { hid: 'twitter:site', name: 'twitter:site', content: '@twitter_id' },
-      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: '//fonts.gstatic.com/' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' }
-    ]
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    'ress/dist/ress.min.css',
-  ],
+  css: ['ress/dist/ress.min.css'],
 
   styleResources: {
-    scss: [
-      '~assets/vars/*.scss'
-    ]
+    scss: ['~assets/vars/*.scss'],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -48,7 +60,20 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    ['@nuxtjs/google-fonts', { families: { 'Noto+Sans+JP': [100, 200, 300, 400, 500, 600, 700, 800, 900], 'Open+Sans': [100, 200, 300, 400, 500, 600, 700, 800, 900], 'Montserrat': [100,200,300,400,500,600,700,800,900] }, display: 'block', download: true, override: true, inject: true }],
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          'Noto+Sans+JP': [100, 200, 300, 400, 500, 600, 700, 800, 900],
+          'Open+Sans': [100, 200, 300, 400, 500, 600, 700, 800, 900],
+          Montserrat: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        },
+        display: 'block',
+        download: true,
+        override: true,
+        inject: true,
+      },
+    ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -58,10 +83,10 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
 
   googleAnalytics: {
-    id: 'G-XXXX'
+    id: 'G-XXXX',
   },
-}
+};
