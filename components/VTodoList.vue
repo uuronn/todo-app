@@ -5,7 +5,7 @@
         <input class="todoList__checkbox" type="checkbox" :checked="todo.isDone" @change="changeDoneStatus(i)">
         <input class="todoList__input" type="text" v-model="todo.title">
         <button class="todoList__button" @click="updateTodoTitle(i)">更新</button>
-        <button class="todoList__button">削除</button>
+        <button class="todoList__button" @click="deleteTodo(i)">削除</button>
       </li>
     </ul>
   </section>
@@ -36,6 +36,12 @@ export default Vue.extend({
     // チェックボックス
     async changeDoneStatus(i: number) {
       const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: !this.todos[i].isDone});
+      console.log(response)
+      console.log(i)
+    },
+    // 削除
+    async deleteTodo(i: number) {
+      const response = await this.$axios.$delete(`https://yukinissie.dev/api/todos/${this.todos[i].id}`);
       console.log(response)
       console.log(i)
     }
