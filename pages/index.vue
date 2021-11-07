@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <h1 class="title">ToDoList</h1>
+    <h1 class="title">World ToDo</h1>
     <VTodoCreate/>
     <VTodoList :todos="todos"/>
   </main>
