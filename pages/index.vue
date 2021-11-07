@@ -1,15 +1,26 @@
 <template>
   <main class="container">
-    <h1>Hello, world!</h1>
+    <h1 class="title">World ToDo</h1>
+    <VTodoCreate/>
+    <VTodoList :todos="todos"/>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import VTodoCreate from '~/components/VTodoCreate.vue';
+import VTodoList from '~/components/VTodoList.vue';
 
 export default Vue.extend({
-
-});
+  components: {
+    VTodoList,
+    VTodoCreate,
+  },
+  async asyncData({ app }) {
+    const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
+    return {todos: response}
+  }
+})
 </script>
 
 <style lang="scss" scoped>
