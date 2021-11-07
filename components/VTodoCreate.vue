@@ -7,20 +7,22 @@
   </section>
 </template>
 
-<script>
-export default ({
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  props: {},
   data() {
     return {
       todoTitle: ""
     }
   },
   methods: {
-    addTodo() {
-      if(this.todoTitle) {
-        console.log(this.todoTitle);
-      }
-        this.todoTitle = "";
-    }
+  async addTodo() {
+    console.log(this.todoTitle)
+    const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
+    console.log(response)
+  }
   }
 })
 </script>
