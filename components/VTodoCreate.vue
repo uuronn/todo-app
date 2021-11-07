@@ -11,25 +11,23 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  props: {},
   data() {
     return {
       todoTitle: ""
     }
   },
   methods: {
-  async addTodo() {
-    console.log(this.todoTitle)
-    const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
-    console.log(response)
-  }
+    async addTodo() {
+      console.log(this.todoTitle)
+      const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
+      console.log(response)
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
 .todoCreate {
-
   &__input {
     border: solid 1px #000;
   }
