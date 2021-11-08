@@ -18,11 +18,15 @@ export default Vue.extend({
   },
   methods: {
     async addTodo() {
-      if(this.todoTitle) {
-        const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
-        console.log(response)
-        location.reload();
-      }
+      try {
+        if(this.todoTitle) {
+          const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
+          console.log(response)
+          location.reload();
+        }
+      } catch {
+          alert("Error by VTodoCreate")
+        }
     }
   }
 })
