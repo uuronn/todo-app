@@ -18,9 +18,11 @@ export default Vue.extend({
   },
   methods: {
     async addTodo() {
-      console.log(this.todoTitle)
-      const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
-      console.log(response)
+      if(this.todoTitle) {
+        const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
+        console.log(response)
+        location.reload();
+      }
     }
   }
 })

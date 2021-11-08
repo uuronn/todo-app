@@ -43,6 +43,7 @@ export default Vue.extend({
     async deleteTodo(i: number) {
       const response = await this.$axios.$delete(`https://yukinissie.dev/api/todos/${this.todos[i].id}`);
       console.log(response)
+      location.reload();
       console.log(i)
     }
   }
