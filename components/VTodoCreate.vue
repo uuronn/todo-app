@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default Vue.extend({
   data() {
@@ -20,13 +20,13 @@ export default Vue.extend({
     async addTodo() {
       try {
         if(this.todoTitle) {
-          const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle});
+          const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle})
           console.log(response)
-          location.reload();
+          location.reload()
         }
       } catch {
-          alert("Error by VTodoCreate")
-        }
+        alert("Error by VTodoCreate")
+      }
     }
   }
 })
