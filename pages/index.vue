@@ -7,18 +7,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VTodoCreate from '~/components/VTodoCreate.vue';
-import VTodoList from '~/components/VTodoList.vue';
+import Vue from 'vue'
+import VTodoCreate from '~/components/VTodoCreate.vue'
+import VTodoList from '~/components/VTodoList.vue'
 
 export default Vue.extend({
   components: {
-    VTodoList,
     VTodoCreate,
+    VTodoList,
   },
   async asyncData({ app }) {
     try {
-      const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
+      const response = await app.$axios.$get('https://yukinissie.dev/api/todos')
       return {todos: response}
     } catch {
       alert("Error by index")

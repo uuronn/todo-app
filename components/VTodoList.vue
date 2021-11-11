@@ -12,12 +12,12 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue';
+import Vue, { PropType } from 'vue'
 
 interface Todo {
-  id: number;
-  title: string;
-  isDone: boolean;
+  id: number
+  title: string
+  isDone: boolean
 }
 
 export default Vue.extend({
