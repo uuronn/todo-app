@@ -17,8 +17,12 @@ export default Vue.extend({
     VTodoCreate,
   },
   async asyncData({ app }) {
-    const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
-    return {todos: response}
+    try {
+      const response = await app.$axios.$get('https://yukinissie.dev/api/todos');
+      return {todos: response}
+    } catch {
+      alert("Error by index")
+    }
   }
 })
 </script>

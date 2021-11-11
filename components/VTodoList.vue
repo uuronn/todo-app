@@ -29,22 +29,34 @@ export default Vue.extend({
   methods: {
     // 更新
     async updateTodoTitle(i: number) {
-      const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: this.todos[i].isDone});
-      console.log(response);
-      console.log(i)
+      try {
+        const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: this.todos[i].isDone})
+        console.log(response)
+        console.log(i)
+      } catch {
+        alert("Error by TodoList")
+      }
     },
     // チェックボックス
     async changeDoneStatus(i: number) {
-      const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: !this.todos[i].isDone});
-      console.log(response)
-      console.log(i)
+      try {
+        const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: !this.todos[i].isDone})
+        console.log(response)
+        console.log(i)
+      } catch {
+        alert("Error by TodoList")
+      }
     },
     // 削除
     async deleteTodo(i: number) {
-      const response = await this.$axios.$delete(`https://yukinissie.dev/api/todos/${this.todos[i].id}`);
-      console.log(response)
-      location.reload();
-      console.log(i)
+      try {
+        const response = await this.$axios.$delete(`https://yukinissie.dev/api/todos/${this.todos[i].id}`)
+        console.log(response)
+        location.reload()
+        console.log(i)
+      } catch {
+        alert("Error by TodoList")
+      }
     }
   }
 })
