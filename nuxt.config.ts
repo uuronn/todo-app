@@ -1,5 +1,5 @@
-import Sass from 'sass'
 import { NuxtConfig } from '@nuxt/types'
+import Sass from 'sass'
 
 const config: NuxtConfig ={
   ssr: false,
