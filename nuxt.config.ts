@@ -93,6 +93,23 @@ const config: NuxtConfig ={
     '@nuxtjs/style-resources',
     '@nuxtjs/google-analytics',
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: '<apiKey>',
+          authDomain: '<authDomain>',
+          projectId: '<projectId>',
+          storageBucket: '<storageBucket>',
+          messagingSenderId: '<messagingSenderId>',
+          appId: '<appId>',
+          measurementId: '<measurementId>'
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
   ],
 
   googleAnalytics: {
