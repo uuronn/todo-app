@@ -20,7 +20,7 @@ export default Vue.extend({
     async addTodo() {
       try {
         if(this.todoTitle) {
-          const response = await this.$axios.$post('https://yukinissie.dev/api/todos',{title: this.todoTitle})
+          const response = await this.$axios.$post('https://kamisen-todo-default-rtdb.firebaseio.com/.json',{title: this.todoTitle})
           console.log(response)
           location.reload()
         }
@@ -28,6 +28,7 @@ export default Vue.extend({
         alert("Error by VTodoCreate")
       }
     }
+    
   }
 })
 </script>

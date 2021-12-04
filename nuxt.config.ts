@@ -109,7 +109,7 @@ const config: NuxtConfig ={
           measurementId: '<measurementId>'
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: false // Just as example. Can be any other service.
         }
       }
     ]
