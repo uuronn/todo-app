@@ -30,7 +30,7 @@ export default Vue.extend({
     // 更新
     async updateTodoTitle(i: number) {
       try {
-        const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: this.todos[i].isDone})
+        const response = await this.$axios.$patch(`https://kamisen-todo-default-rtdb.firebaseio.com/.json${this.todos[i].id}`,{title: this.todos[i].title, isDone: this.todos[i].isDone})
         console.log(response)
         console.log(i)
       } catch {
@@ -40,7 +40,7 @@ export default Vue.extend({
     // チェックボックス
     async changeDoneStatus(i: number) {
       try {
-        const response = await this.$axios.$patch(`https://yukinissie.dev/api/todos/${this.todos[i].id}`,{title: this.todos[i].title, isDone: !this.todos[i].isDone})
+        const response = await this.$axios.$patch(`https://kamisen-todo-default-rtdb.firebaseio.com/.json${this.todos[i].id}`,{title: this.todos[i].title, isDone: !this.todos[i].isDone})
         console.log(response)
         console.log(i)
       } catch {

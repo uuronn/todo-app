@@ -18,7 +18,7 @@ export default Vue.extend({
   },
   async asyncData({ app }) {
     try {
-      const response = await app.$axios.$get('https://yukinissie.dev/api/todos')
+      const response = await app.$axios.$get('https://kamisen-todo-default-rtdb.firebaseio.com/.json')
       return {todos: response}
     } catch {
       alert("Error by index")
